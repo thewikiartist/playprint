@@ -1,0 +1,73 @@
+{
+  "name": "@playprint/sdk",
+  "version": "0.1.1",
+  "description": "Client for playprint.ai — ghost AI player profiles as a service. Wraps @playprint/core for offline profiling, ships telemetry, retrieves hosted Legends. COPPA-safe per-game identities.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "publishConfig": {
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@playprint/core": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "keywords": [
+    "playprint",
+    "ghost-ai",
+    "ai-bots",
+    "async-multiplayer",
+    "legends",
+    "playstyle",
+    "player-profiling",
+    "game-analytics",
+    "telemetry",
+    "coppa"
+  ],
+  "author": "TheWikiArtist",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thewikiartist/playprint.git",
+    "directory": "packages/sdk"
+  },
+  "homepage": "https://github.com/thewikiartist/playprint/tree/main/packages/sdk#readme",
+  "bugs": {
+    "url": "https://github.com/thewikiartist/playprint/issues"
+  },
+  "license": "MIT"
+}
