@@ -1,0 +1,76 @@
+{
+  "name": "@playprint/core",
+  "version": "0.2.1",
+  "description": "Ghost AI engine — turn real players' behaviour into AI bots that play like them. Decision tracking, playstyle profiles, ghost biases, archetypes. Zero dependencies, fully offline.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "publishConfig": {
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  },
+  "keywords": [
+    "playprint",
+    "ghost-ai",
+    "ai-bots",
+    "game-bots",
+    "drivatar",
+    "async-multiplayer",
+    "asynchronous-multiplayer",
+    "game-ai",
+    "playstyle",
+    "player-profiling",
+    "game-analytics",
+    "archetype",
+    "telemetry"
+  ],
+  "author": "TheWikiArtist",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thewikiartist/playprint.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/thewikiartist/playprint/tree/main/packages/core#readme",
+  "bugs": {
+    "url": "https://github.com/thewikiartist/playprint/issues"
+  },
+  "license": "MIT"
+}
